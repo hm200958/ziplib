@@ -241,7 +241,7 @@ uint16_t ZipArchiveEntry::GetCompressionMethod() const
 void ZipArchiveEntry::SetAttributes(Attributes value)
 {
   Attributes prevVal = this->GetAttributes();
-  Attributes newVal = prevVal | value;
+  Attributes newVal = value;
 
   // if we're changing from directory to file
   if (!!(prevVal & Attributes::Directory) && !!(newVal & Attributes::Archive))
